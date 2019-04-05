@@ -9,7 +9,7 @@ var session = require('express-session');
 var passport = require('passport');
 
 require('./passport')(passport)
-mongoose.connect('mongodb://localhost:27017/login');
+mongoose.connect('172.16.2.70:27017/login');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
