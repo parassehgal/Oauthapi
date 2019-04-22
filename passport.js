@@ -11,7 +11,7 @@ module.exports = function(passport){
     })
 	
 	passport.use(new localStrategy(function (username, password, done) {
-		User.findOne({
+		/*User.findOne({
 				username: username
 			}, function (err, doc) {
 				if (err) {
@@ -32,7 +32,15 @@ module.exports = function(passport){
 						done(null, false)
 					}
 				}
-			})
+			})*/
+			
+			if(username == 'admin' && password == 'admin')
+			{
+			done(null, {
+								username: username,
+								password: password
+							})
+			}
 	}))
 
 }
